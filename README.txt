@@ -1,4 +1,4 @@
-Corpus Spanish
+# Spanish Corpus
 
 This little library needs some packages of NLTK (Natural Language Toolkit).
 To install these packages is required init a Python console in the virtualenv 
