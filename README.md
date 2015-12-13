@@ -1,4 +1,4 @@
-Corpus Spanish
+# Spanish Corpus
 
 This little library needs some packages of NLTK (Natural Language Toolkit).
 To install these packages is required init a Python console in the virtualenv 
@@ -18,4 +18,3 @@ Install German and French dictionaries to more accurately:
  	sudo apt-get install myspell-fr-fr
 
 In 'main.py' you have an example of the library's use.
-
