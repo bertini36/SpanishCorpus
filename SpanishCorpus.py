@@ -1,5 +1,6 @@
-#! /usr/bin/python
-# coding=utf-8
+# -*- coding: UTF-8 -*-
+
+from __future__ import unicode_literals
 
 import sys
 import time
@@ -10,8 +11,6 @@ from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords, cess_esp, wordnet
 
 from pattern.es import parse, singularize, conjugate, INFINITIVE, predicative
-
-__author__ = 'Alberto Pou Quirós'
 
 
 class SpanishCorpus:
@@ -94,6 +93,9 @@ class SpanishCorpus:
         self._corrected_words = value
 
     def timing(method):
+        """
+        Decorator that allows to time the execution of a function
+        """
         def timed(self, *args, **kwargs):
             if self._timing:
                 t_start = time.time()
@@ -254,8 +256,8 @@ class SpanishCorpus:
         if not category:
             category = self.check_category_pattern(token, index)
             if to_correct and category == 'n' and any(c in ['a', 'e', 'i', 'o', 'u'] for c in token) \
-                    and not enchant.Dict("en").check(token) and not enchant.Dict("fr").check(token) \
-                    and not enchant.Dict("de_DE").check(token):
+                    and not enchant.Dict('en').check(token) and not enchant.Dict('fr').check(token) \
+                    and not enchant.Dict('de_DE').check(token):
                 new_token = self.correct_word(token)
                 if new_token and new_token != token:
                     self.analize_word(new_token, index=index, to_correct=False)
