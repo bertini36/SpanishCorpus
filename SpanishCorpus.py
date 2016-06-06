@@ -101,7 +101,7 @@ class SpanishCorpus:
                 t_start = time.time()
                 result = method(self, *args, **kwargs)
                 t_end = time.time()
-                print '%r --- %2.2f sec' % (method.__name__.ljust(25, ' '), t_end - t_start)
+                print('{0} --- {1} sec'.format(method.__name__.ljust(25, str(' ')), t_end - t_start))
             else:
                 result = method(self, *args, **kwargs)
             return result
